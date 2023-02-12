@@ -1,138 +1,80 @@
 import socket
-import threading
-import select
+from _thread import *
+import ssl
 
-
-SOCKS_VERSION = 5
 
 class ProxyServer:
     
     def __init__(self) -> None:
-        self.password = "password"
-        self.username = "username"
+        self.PORT = 5000
+        self.NETWORK = "0.0.0.0"
+        self.BUFFERSIZE = 8124
+
+    def start(self):
+        
+        suscket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        suscket.bind((self.NETWORK, self.PORT))
+        suscket.listen(5)
+        
+        print("[*] Proxy is running on {} and Port: {}".format(self.NETWORK, self.PORT))
+        
+        while True:
+            connection, address = suscket.accept()
+            data = connection.recv(self.BUFFERSIZE)
+            print("[*] New connection from {}".format(address[0]))
+
+            start_new_thread(self.get_request_data, (connection, data))
     
-    def handle_client(self, connection:socket.socket):
-        version, nmethods = connection.recv(2)
+    def get_request_data(self, connection, data:bytes):
+        data_dec = data.decode().split("\r")
+        temp = data_dec[1].split(" ")[1].split(":")
+
+
+        port = 80
+        if len(temp) > 1:
+            server, port = temp
+            port = int(port)
+        else:
+            server = temp[0]
+
+
+        if self.is_allowed(server):
+            print("[*] Allowing request to {} on port: {}".format(server, port))
+            start_new_thread(self.send_request_server, (server, port, data, connection))
         
-        methods = self.get_available_methods(nmethods, connection)
+    def send_request_server(self, server, port, data, client:socket.socket):
         
-        if 2 not in set(methods):
-            connection.close()
-            return
+        if port == 443:
+            ctxt = ssl.create_default_context()
+            ctxt.check_hostname = True
+            ctxt.verify_mode = ssl.CERT_REQUIRED
+            server_sock = ctxt.wrap_socket(socket.socket(socket.AF_INET), server_hostname=server)
+        else:
+            server_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             
-        connection.sendall(bytes([SOCKS_VERSION, 2]))
-        
-        if not self.verify_credentials(connection):
-            return
-        
-        version, cmd, _, address_type = connection.recv(4)
-        
-        if address_type == 1:
-            adress = socket.inet_ntoa(connection.recv(4))
-        elif address_type == 3:
-            domain_length = connection.recv(1)[0]
-            adress = connection.recv(domain_length)
-            adress = socket.gethostbyname(adress)
-            
-        port = int.from_bytes(connection.recv(2), 'big', signed=False)
-        
         try:
-            if cmd == 1:
-                remote = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                remote.connect((adress, port))
-                bind_adress = remote.getsockname()
-                print("* CONNECTED to {} {}".format(adress, port))
-            else:
-                connection.close()
-            address = int.from_bytes(socket.inet_aton(bind_adress[0]), 'big', signed=False)
-            port = int(bind_adress[1])
-            
-            reply = b''.join([
-                SOCKS_VERSION.to_bytes(1, 'big'),
-                int(0).to_bytes(1, 'big'),
-                int(0).to_bytes(1, 'big'),
-                int(1).to_bytes(1, 'big'),
-                address.to_bytes(4, 'big'),
-                port.to_bytes(2, 'big')
-            ])
-        except Exception as e: #<-- Omg this is horrible
-            print("* Oh no an Error!!!")
-            reply = self.generate_failed_reply(address_type, 5)
+            server_sock.connect((server, port))
+            server_sock.sendall(data)
+        except socket.gaierror as e:
+            print(e)
+            print("[*] Can't connect to Host")
         
-        connection.sendall(reply)
-        
-        if reply[1] == 0 and cmd == 1:
-            self.exchange_loop(connection, remote)
-            
-        connection.close()
-    
-    def exchange_loop(self, client:socket.socket, remote:socket.socket):
+        response = b''
         while True:
-            r, w, e = select.select([client, remote], [], [])
-
-            if client in r:
-                data = client.recv(4096)
-                if not data:
-                    break
-                if remote.send(data) <= 0:
-                    break
-
-            if remote in r:
-                data = remote.recv(4096)
-                if not data:
-                    break
-                if client.send(data) <= 0:
-                    break
-                        
-    
-    def generate_failed_reply(address_type:int, error_number:int):
-        return b''.join([
-                SOCKS_VERSION.to_bytes(1, 'big'),
-                error_number.to_bytes(1, 'big'),
-                int(0).to_bytes(1, 'big'),
-                int(1).to_bytes(1, 'big'), # <-- address_type should be set to 1
-                int(0).to_bytes(1, 'big'),
-                int(0).to_bytes(1, 'big')
-        ])
+            reply = server_sock.recv(self.BUFFERSIZE)
+            if len(reply) == 0:
+                break
+            response += reply
         
-    def verify_credentials(self, connection:socket.socket):
-        version = ord(connection.recv(1))
+        client.sendall(response)
         
-        username_len = ord(connection.recv(1))
-        username = connection.recv(username_len).decode('utf-8')
+        print("[*] Succesfully transmitted data")
+        server_sock.close()
+        client.close()
         
-        password_len = ord(connection.recv(1))
-        password = connection.recv(password_len).decode('utf-8')
+    def is_allowed(self, server):
+        return True
         
-        if username == self.username and password == self.password:
-            response = bytes([version, 0])
-            connection.sendall(response)
-            return True
         
-        response = bytes([version, 0xFF])
-        connection.sendall(response)
-        connection.close()
-        return False
-        
-    def get_available_methods(self, nmethods, connection:socket.socket):
-        methods = []
-        for i in range(nmethods):
-            methods.append(ord(connection.recv(1)))
-        return methods
-    
-    def run(self, host, port):
-        session = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        session.bind((host, port))
-        session.listen()
-        
-        print("* Proxy listening on Port: {}".format(port))
-        
-        while True:
-            connection, address = session.accept()
-            print("* Got a new connection from {}".format(address))
-            thread = threading.Thread(target=self.handle_client, args=(connection, ))
-            thread.start()
-            
 if __name__ == "__main__":
-    proxy = ProxyServer()
-    proxy.run("0.0.0.0", 5000)
+    ProxyServer().start()
