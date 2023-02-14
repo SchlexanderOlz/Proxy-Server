@@ -46,9 +46,10 @@ class ProxyServer:
         
         if port == 443:
             ctxt = ssl.create_default_context()
-            ctxt.check_hostname = True
             ctxt.verify_mode = ssl.CERT_REQUIRED
-            server_sock = ctxt.wrap_socket(socket.socket(socket.AF_INET), server_hostname=server)
+            ctxt.load_verify_locations(cafile="/etc/self-signed-certs/ca.pem")
+            server_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            server_sock = ctxt.wrap_socket(server_sock, server_hostname=server)
         else:
             server_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             
