@@ -49,11 +49,10 @@ class ProxyServer:
     def send_request_server(self, server, port, data, client:socket.socket):
         
         if port == 443: # --> If the request is an https request a secure ssl connection is established
-            ctxt = ssl.create_default_context()
-            ctxt.verify_mode = ssl.CERT_REQUIRED
-            ctxt.load_verify_locations(cafile="/etc/self-signed-certs/ca.pem") # --> Wrong file at the moment
+            ctxt = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+            #ctxt.load_verify_locations(cafile="/etc/self-signed-certs/ca.pem") # --> Wrong file at the moment
             server_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            server_sock = ctxt.wrap_socket(server_sock, server_hostname=server)
+            server_sock = ctxt.wrap_socket(server_sock, server_side=True)
         else:
             server_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # --> Host we want to get data from
             
@@ -78,16 +77,15 @@ class ProxyServer:
         client.close()
         
     def is_allowed(self, server):
-        with open("black_list.json") as json_data:
+        with open("Proxy-Server/black_list.json") as json_data:
             data = json.load(json_data)
             return not server in data["hosts"]["address"]
         
     def load_block_info(self, server, client:socket.socket):
-        with open("unnallowed_page/unnallowed.html", "rb") as html_data:
+        with open("Proxy-Server/unnallowed_page/unnallowed.html") as html_data:
             html_text = html_data.read()
-            resp_len = len(html_text).to_bytes(2, byteorder='big')
-            response = b'HTTP/1.1 403 Forbidden\r\nContent-Type: text/html\r\nContent-Length: ' + resp_len + b'\r\n\r\n' + html_text
-            print(response)
+            text = "HTTP/1.1 403 Forbidden\r\nContent-Type: text/html\r\nContent-Length: " + str(len(html_text)) + '\r\n\r\n' + html_text
+            response = str(text).encode("utf-8")
         client.sendall(response)
         client.close()
 
