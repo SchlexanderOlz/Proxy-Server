@@ -55,22 +55,26 @@ class ProxyServer:
             start_new_thread(self.load_block_info, (server, client))
         
     def send_request_server(self, server, port, data, client:socket.socket):
-        
-        if port == 443: # --> If the request is an https request a secure ssl connection is established
-            ctxt = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-            #ctxt.load_verify_locations(cafile="/etc/self-signed-certs/ca.pem") # --> Wrong file at the moment
-            server_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            server_sock = ctxt.wrap_socket(server_sock, server_side=True)
-        else:
-            server_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # --> Host we want to get data from
-            
+
+
+        server_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
         try:
             server_sock.connect((server, port))
+            if port == 443:
+                context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
+                context.check_hostname = False
+                context.verify_mode = ssl.CERT_NONE
+                client = context.wrap_socket(client, server_hostname=server)
+                server_sock = context.wrap_socket(server_sock, server_hostname=server)
+                print(server_sock.context)
+                #self.forward_ssl(client_ssl, server_ssl)
+                client.send(b'HTTP/1.1 200 OK\r\n\r\n')
             server_sock.sendall(data)
         except (socket.gaierror, ConnectionRefusedError) as e: # Haha a gay-error
             print(e)
             print("[*] Can't connect to Host")
-        
+
         response = b''
         while True:
             reply = server_sock.recv(self.BUFFERSIZE)
@@ -79,11 +83,11 @@ class ProxyServer:
             response += reply
         
         client.sendall(response)
-        
+
         print("[*] Succesfully transmitted data")
         server_sock.close()
         client.close()
-        
+
     def is_allowed(self, server, path):
         with open("black_list.json") as json_data:
             data = json.load(json_data)
