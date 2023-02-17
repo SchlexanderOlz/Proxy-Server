@@ -37,9 +37,17 @@ class ProxyServer:
             port = int(port)
         else:
             server = temp[0]
+            
+
+        method, path, http_ver = data_dec[0].split(" ")
+
+        if port != 443:
+            path = path.replace("http://", "")
+        elif method != "CONNECT":
+            path = path.replace("https://", "")
 
 
-        if self.is_allowed(server):
+        if self.is_allowed(server, path):
             print("[*] Allowing request to {} on port: {}".format(server, port))
             start_new_thread(self.send_request_server, (server, port, data, client))
         else:
@@ -76,13 +84,13 @@ class ProxyServer:
         server_sock.close()
         client.close()
         
-    def is_allowed(self, server):
-        with open("Proxy-Server/black_list.json") as json_data:
+    def is_allowed(self, server, path):
+        with open("black_list.json") as json_data:
             data = json.load(json_data)
-            return not server in data["hosts"]["address"]
+            return not server in data["hosts"]["address"] and path not in data["hosts"]["paths"]
         
     def load_block_info(self, server, client:socket.socket):
-        with open("Proxy-Server/unnallowed_page/unnallowed.html") as html_data:
+        with open("unnallowed_page/unnallowed.html") as html_data:
             html_text = html_data.read()
             text = "HTTP/1.1 403 Forbidden\r\nContent-Type: text/html\r\nContent-Length: " + str(len(html_text)) + '\r\n\r\n' + html_text
             response = str(text).encode("utf-8")

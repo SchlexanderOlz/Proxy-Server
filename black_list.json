@@ -1,7 +1,11 @@
 {
     "hosts" : {
         "address" : [
-            "info.cern.ch"
+            "sooseninder.com"
+        ],
+        "paths" : [
+            "info.cern.ch/hypertext/WWW/TheProject.html"
         ]
+        
     }
 }
