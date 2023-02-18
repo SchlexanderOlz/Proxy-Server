@@ -22,6 +22,7 @@ class ProxyServer:
         while True:
             client, address = suscket.accept()
             data = client.recv(self.BUFFERSIZE)
+            print(data)
             print("[*] New connection from {}".format(address[0]))
 
             start_new_thread(self.get_request_data, (client, data)) # --> Starting new thread to get the request data
@@ -45,6 +46,8 @@ class ProxyServer:
             path = path.replace("http://", "")
         elif method != "CONNECT":
             path = path.replace("https://", "")
+        else:
+            data = self.handle_connect(server, data_dec)
 
 
         if self.is_allowed(server, path):
@@ -56,36 +59,34 @@ class ProxyServer:
         
     def send_request_server(self, server, port, data, client:socket.socket):
 
-
-        server_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-        try:
-            server_sock.connect((server, port))
+        with socket.create_connection((server, port)) as sock:
             if port == 443:
-                context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
-                context.check_hostname = False
-                context.verify_mode = ssl.CERT_NONE
-                client = context.wrap_socket(client, server_hostname=server)
-                server_sock = context.wrap_socket(server_sock, server_hostname=server)
-                print(server_sock.context)
-                #self.forward_ssl(client_ssl, server_ssl)
-                client.send(b'HTTP/1.1 200 OK\r\n\r\n')
+                ctxt = ssl.create_default_context()
+                server_sock = ctxt.wrap_socket(sock, server_hostname=server)
+                client.sendall(b"HTTP/1.1 200 Connection established\r\n\r\n")
+            else:
+                server_sock = sock
             server_sock.sendall(data)
-        except (socket.gaierror, ConnectionRefusedError) as e: # Haha a gay-error
-            print(e)
-            print("[*] Can't connect to Host")
 
-        response = b''
-        while True:
-            reply = server_sock.recv(self.BUFFERSIZE)
-            if len(reply) == 0: # --> When the server stops sending data
-                break
-            response += reply
+            response = b''
+            while True:
+                reply = server_sock.recv(self.BUFFERSIZE)
+                if len(reply) == 0: # --> When the server stops sending data
+                    break
+                print(str("-" * 50))
+                print(reply)
+                print(str("-" * 50))
+                response += reply
+                
+                if client.fileno() != -1:
+                    try:
+                        client.send(reply)
+                    except (BrokenPipeError, ConnectionResetError):
+                        break
+                else:
+                    break
         
-        client.sendall(response)
-
         print("[*] Succesfully transmitted data")
-        server_sock.close()
         client.close()
 
     def is_allowed(self, server, path):
@@ -100,6 +101,13 @@ class ProxyServer:
             response = str(text).encode("utf-8")
         client.sendall(response)
         client.close()
+        
+    def handle_connect(self, server, data):
+        user_agent = ''
+        for line in data:
+            if str(line).startswith('User-Agent:'):
+                user_agent = line
+        return f"GET / HTTP/1.1\r\nHost: {server}\r\n{user_agent}\r\nProxy-Connection: Keep-Alive\r\n\r\n".encode()
 
      
 if __name__ == "__main__":
