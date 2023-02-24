@@ -1,7 +1,9 @@
 {
     "hosts" : {
         "address" : [
-            "sooseninder.com"
+            "sooseninder.com",
+            "pagead2.googlesyndication.com",
+            "googleads.g.doubleclick.net"
         ],
         "paths" : [
             "info.cern.ch/hypertext/WWW/TheProject.html"
