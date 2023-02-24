@@ -1,0 +1,1759 @@
+Serving HTTP Proxy on 0.0.0.0 port 5000 ...
+Traceback (most recent call last):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 426, in <module>
+    run()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 422, in run
+    httpd.serve_forever()
+  File "/usr/lib/python3.9/socketserver.py", line 232, in serve_forever
+    ready = selector.select(poll_interval)
+  File "/usr/lib/python3.9/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54016)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 145, in do_GET
+    req_body_modified = self.request_handler(req, req_body)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 388, in request_handler
+    if self.is_allowed(req.path):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54017)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 145, in do_GET
+    req_body_modified = self.request_handler(req, req_body)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 388, in request_handler
+    if self.is_allowed(req.path):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54018)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 145, in do_GET
+    req_body_modified = self.request_handler(req, req_body)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 388, in request_handler
+    if self.is_allowed(req.path):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54019)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54020)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54022)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 145, in do_GET
+    req_body_modified = self.request_handler(req, req_body)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 388, in request_handler
+    if self.is_allowed(req.path):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54025)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54026)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54027)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54030)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+----------------------------------------
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54031)
+Exception occurred during processing of request from ('192.168.8.152', 54032)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+Traceback (most recent call last):
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54033)
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54034)
+----------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54035)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54036)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54037)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54038)
+Traceback (most recent call last):
+----------------------------------------
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+Exception occurred during processing of request from ('192.168.8.152', 54039)
+----------------------------------------
+Traceback (most recent call last):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+----------------------------------------
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+Exception occurred during processing of request from ('192.168.8.152', 54041)
+Exception occurred during processing of request from ('192.168.8.152', 54040)
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+----------------------------------------
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54042)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54043)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54045)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54047)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54050)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54051)
+Exception occurred during processing of request from ('192.168.8.152', 54052)
+Traceback (most recent call last):
+----------------------------------------
+----------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54054)
+Exception occurred during processing of request from ('192.168.8.152', 54053)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54055)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54056)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54059)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54060)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54063)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54067)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54068)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54072)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54075)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54076)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54077)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54078)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54079)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54080)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54083)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54084)
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54085)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54086)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54088)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54092)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54093)
+----------------------------------------
+Traceback (most recent call last):
+Exception occurred during processing of request from ('192.168.8.152', 54094)
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54095)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54101)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54107)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54108)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54109)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54110)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54111)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54112)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54113)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54114)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54115)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54116)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54117)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54118)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54119)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54120)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54121)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54122)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54123)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54132)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54141)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54153)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54154)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.8.152', 54163)
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.9/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 57, in __init__
+    BaseHTTPRequestHandler.__init__(self, *args, **kwargs)
+  File "/usr/lib/python3.9/socketserver.py", line 720, in __init__
+    self.handle()
+  File "/usr/lib/python3.9/http/server.py", line 427, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.9/http/server.py", line 415, in handle_one_request
+    method()
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 69, in do_CONNECT
+    self.connect_relay() # --> Only temporary
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 104, in connect_relay
+    if not self.is_allowed(address[0]):
+  File "/etc/Proxy-Server/rout_proxy/rout_proxy.py", line 405, in is_allowed
+    with open("black_list.json", "r") as json_data:
+FileNotFoundError: [Errno 2] No such file or directory: 'black_list.json'
+----------------------------------------

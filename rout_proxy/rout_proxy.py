@@ -66,13 +66,16 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
     def do_CONNECT(self):
         if os.path.isfile(self.cakey) and os.path.isfile(self.cacert) and os.path.isfile(
                 self.certkey) and os.path.isdir(self.certdir):
-            self.connect_intercept()
+            self.connect_relay() # --> Only temporary
+            #self.connect_intercept() --> Only temporary
         else:
             self.connect_relay()
 
     def connect_intercept(self):
         hostname = self.path.split(':')[0]
         certpath = "{}/{}.crt".format(self.certdir.rstrip('/'), hostname)
+        
+        #general_hostname = '*.' + '.'.join(hostname.split(".")[1:]) # Cert for domain and subdomains
 
         with self.lock:
             if not os.path.isfile(certpath):
@@ -98,6 +101,9 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
 
     def connect_relay(self):
         address = self.path.split(':', 1)
+        if not self.is_allowed(address[0]):
+            print("[*] Blocked access to {}".format(address[0]))
+            return
         address[1] = int(address[1]) or 443
         try:
             s = socket.create_connection(address, timeout=self.timeout)
@@ -387,13 +393,18 @@ class ProxyRequestHandler(BaseHTTPRequestHandler):
         pass
 
     def save_handler(self, req, req_body, res, res_body):
-        self.print_info(req, req_body, res, res_body)
+        #self.print_info(req, req_body, res, res_body)
+        pass
 
     def is_allowed(self, path):
-        uri = urlparse.urlparse(path)
+        #uri = urlparse.urlparse(path)
+        #with open("black_list.json", "r") as json_data:
+            #data = json.load(json_data)
+            #return not uri.netloc in data["hosts"]["address"] and uri.path not in data["hosts"]["paths"]
+            
         with open("black_list.json", "r") as json_data:
             data = json.load(json_data)
-            return not uri.netloc in data["hosts"]["address"] and uri.path not in data["hosts"]["paths"]
+            return not path in data["hosts"]["address"] and path not in data["hosts"]["paths"]
 
 
 def run(HandlerClass=ProxyRequestHandler, ServerClass=ThreadingHTTPServer, protocol="HTTP/1.1"):
