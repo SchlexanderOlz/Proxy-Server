@@ -1,0 +1,12 @@
+{
+    "hosts" : {
+        "address" : [
+            "sooseninder.com",
+            "pagead2.googlesyndication.com"
+        ],
+        "paths" : [
+            "info.cern.ch/hypertext/WWW/TheProject.html"
+        ]
+        
+    }
+}
